@@ -1,0 +1,3 @@
+Pantolon sipariş sayısı 2
+Kazak sipariş sayısı 1
+Kaban sipariş sayısı 1
