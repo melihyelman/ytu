@@ -1,0 +1,13 @@
+1-double linked list yapısı oluşturma
+2-oluşturma, ekleme ve silme
+3-search ve counter
+4-eşik değer ve bakım
+5-eşiği aşanı başa taşı
+6-dosyadan okuma
+
+gerekli fonksiyonlar:
+öne ekleme,
+sonuncuyu silme
+arama
+uzunluk
+dosya okuma
