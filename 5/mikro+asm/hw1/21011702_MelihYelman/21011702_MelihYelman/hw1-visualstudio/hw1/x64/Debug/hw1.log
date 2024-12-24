@@ -1,0 +1,20 @@
+﻿  main.cpp
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(79,5): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(81,9): error C2065: 'MOV': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(81,13): error C2146: syntax error: missing ';' before identifier 'ESI'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(81,13): error C2065: 'ESI': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(82,9): error C2146: syntax error: missing ';' before identifier 'MOV'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(82,9): error C2065: 'MOV': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(82,13): error C2146: syntax error: missing ';' before identifier 'ECX'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(82,13): error C2065: 'ECX': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(83,9): error C2146: syntax error: missing ';' before identifier 'L1'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(84,9): error C2065: 'MOV': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(84,13): error C2146: syntax error: missing ';' before identifier 'AL'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(84,13): error C2065: 'AL': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(85,13): error C2760: syntax error: 'MOV' was unexpected here; expected '{'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(85,17): error C2065: 'BL': undeclared identifier
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(86,13): error C2146: syntax error: missing ',' before identifier 'SUB'
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(135,5): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(145,5): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(156,5): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
+C:\Users\melih\Downloads\hw1-visualstudio\hw1-visualstudio\main.cpp(167,5): error C4235: nonstandard extension used: '__asm' keyword not supported on this architecture
