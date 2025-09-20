@@ -1,0 +1,18 @@
+Backendi ayağa kaldırmak için:
+backend dizinine roberta klasörü açılıp model oraya yüklenmeli. 
+fastapi, transformer ve torch kütüphaneleri pip install ile indirilmeli
+uvicorn main:app --reload komutu çalıştırılarak server ayağa kaldırılmalı.
+
+Frontendi ayağa kaldırmak için:
+Bu next.js projesini ayağa kaldırmak için nodejs'in 20 ve üstümü sürümü yeterlidir.
+npm install komutu çalıştırılarak gerekli bütün kütüphaneler indirilir.
+npm run dev komutu çalıştırılarak frontend ayağa kaldırılır. 
+.env.local dosyasında spotify ve genius api keyleri vardır.
+
+Model Eğitim Dosyalarını çalıştırmak için:
+Projeyi geliştirirken google colab ortamını kullandık bu yüzden ilgili modelin kodunu çalıştırmak için gerekli dataset
+doğru dizine eklenerek kod çalıştırılarabilir.
+
+Dataset kodları için:
+collect_tracks_dataset.py dosyası spotify ve genius api kullanılarak şarkı ve şarkı sözlerini çeker 
+burada gerekli api keyleri dosyanın içinde bırakılmıştır direkt çalıştırılabilir.
