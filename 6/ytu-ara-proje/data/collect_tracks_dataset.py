@@ -105,9 +105,9 @@ def genius_search_safe(genius_client, title: str, artist: str, max_requests_per_
 
 def main():
     # --- Yapılandırma ---
-    SPOTIPY_CLIENT_ID     = "d074373b7aa3439c8595c0619659e568"
-    SPOTIPY_CLIENT_SECRET = "1ae83dbc495c48a7a16eab22d2f4df02"
-    GENIUS_ACCESS_TOKEN   = "tM8tc0bfNFEwbcQETus3ZfvWgQy3OFF_1WAxkBf9GLwqCKfPbMpgU89omORHB-pa" 
+    SPOTIPY_CLIENT_ID     = ""
+    SPOTIPY_CLIENT_SECRET = ""
+    GENIUS_ACCESS_TOKEN   = "" 
     OUTPUT_CSV_FILE = "tracks_with_lyrics_and_popularity.csv"
     GENRES          = ['pop', 'rock', 'hip-hop', 'r&b', 'country', 'blues']
     TARGET_TRACKS_PER_GENRE = 2000
