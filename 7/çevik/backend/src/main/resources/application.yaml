@@ -1,0 +1,54 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  hikari:
+    maximum-pool-size: ${DB_MAX_POOL_SIZE}
+    minimum-idle: ${DB_MIN_IDLE}
+    connection-timeout: ${DB_CONNECTION_TIMEOUT}
+    idle-timeout: ${DB_IDLE_TIMEOUT}
+    max-lifetime: ${DB_MAX_LIFETIME}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  sql:
+    init:
+      mode: always
+
+
+management:
+  health:
+    mail:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: ${JWT_EXPIRATION}
+    issuer: ${JWT_ISSUER}
+    cookie-name: ${JWT_COOKIE_NAME}
+    cookie-secure: ${JWT_COOKIE_SECURE}
+
+auth:
+  default-role: user
+
+server:
+  forward-headers-strategy: native
+  servlet:
+    session:
+      cookie:
+        secure: ${SESSION_COOKIE_SECURE}
+        same-site: ${SESSION_COOKIE_SAME_SITE}
+  port: ${SERVER_PORT}
