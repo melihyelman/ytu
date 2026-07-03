@@ -1,0 +1,98 @@
+
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    hostname: namenode
+    restart: unless-stopped
+    env_file: ./docker/hadoop.env
+    environment:
+      - CLUSTER_NAME=moviesearch
+    ports:
+      - "9870:9870"     
+      - "9000:9000" 
+    volumes:
+      - namenode:/hadoop/dfs/name
+
+  datanode1:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode1
+    hostname: datanode1
+    restart: unless-stopped
+    env_file: ./docker/hadoop.env
+    environment:
+      - SERVICE_PRECONDITION=namenode:9870
+      - HDFS_CONF_dfs_datanode_address=0.0.0.0:9866
+    depends_on:
+      - namenode
+    ports:
+      - "9866:9866"     
+    volumes:
+      - datanode1:/hadoop/dfs/data
+
+  datanode2:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode2
+    hostname: datanode2
+    restart: unless-stopped
+    env_file: ./docker/hadoop.env
+    environment:
+      - SERVICE_PRECONDITION=namenode:9870
+      - HDFS_CONF_dfs_datanode_address=0.0.0.0:9886
+    depends_on:
+      - namenode
+    ports:
+      - "9886:9886"    
+    volumes:
+      - datanode2:/hadoop/dfs/data
+
+  resourcemanager:
+    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    container_name: resourcemanager
+    hostname: resourcemanager
+    restart: unless-stopped
+    env_file: ./docker/hadoop.env
+    environment:
+      - SERVICE_PRECONDITION=namenode:9000 namenode:9870 datanode1:9864 datanode2:9864
+    depends_on:
+      - namenode
+      - datanode1
+      - datanode2
+    ports:
+      - "8088:8088"    
+      - "8032:8032"    
+
+  nodemanager1:
+    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+    container_name: nodemanager1
+    hostname: nodemanager1
+    restart: unless-stopped
+    env_file: ./docker/hadoop.env
+    environment:
+      - SERVICE_PRECONDITION=namenode:9000 namenode:9870 resourcemanager:8088
+    depends_on:
+      - resourcemanager
+    ports:
+      - "50100-50120:50100-50120" 
+
+  historyserver:
+    image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    container_name: historyserver
+    hostname: historyserver
+    restart: unless-stopped
+    env_file: ./docker/hadoop.env
+    environment:
+      - SERVICE_PRECONDITION=namenode:9000 namenode:9870 resourcemanager:8088
+    depends_on:
+      - resourcemanager
+    ports:
+      - "8188:8188"    
+      - "10020:10020" 
+    volumes:
+      - historyserver:/hadoop/yarn/timeline
+
+volumes:
+  namenode:
+  datanode1:
+  datanode2:
+  historyserver:

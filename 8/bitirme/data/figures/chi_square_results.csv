@@ -1,0 +1,2 @@
+﻿Test,n_topics,n_emotions,n_total,chi_square,dof,p_value,cramer_v,decision
+Topics × Emotion,23,6,211223,7648.391341340369,110,0.0,0.08509997746985952,Reject H0
